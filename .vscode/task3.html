@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lamg="en">
+    <head>
+        <body>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+        <title>Laboratory task of Eugene Medianyk number 17</title>
+<div class="wrapper">
+    <ul class="navbar">
+        <li><a href="#" class="a_parent">
+            <div class="wrap">
+                <span class="text">Laboratory1</span>
+            </div>
+        </a>
+       <div class="dd_menu">
+           <ul>
+               <li>
+              <a href="C:/Users/Eugene/Desktop/JavaScript-basics/.vscode/task1.html" class="dd_menu_a">
+                <div class="wrap" >
+                    <span class="text">Task 1</span>
+                </div>
+              </a>
+               </li>
+               <li>
+                <a href="C:/Users/Eugene/Desktop/JavaScript-basics/.vscode/task2.html" class="dd_menu_a">
+                  <div class="wrap">
+                      <span class="text">Task 2</span>
+                  </div>
+                </a>
+                 </li>
+                 <li>
+                    <a href="C:/Users/Eugene/Desktop/JavaScript-basics/.vscode/task3.html" class="dd_menu_a">
+                      <div class="wrap">
+                          <span class="text">Task 3</span>
+                      </div>
+                    </a>
+                     </li>
+                     <li>
+                        <a href="C:/Users/Eugene/Desktop/JavaScript-basics/.vscode/task4.html" class="dd_menu_a">
+                          <div class="wrap">
+                              <span class="text">Task 4</span>
+                          </div>
+                        </a>
+                         </li>
+                         <li>
+                            <a href="C:/Users/Eugene/Desktop/JavaScript-basics/.vscode/task5.html" class="dd_menu_a">
+                              <div class="wrap">
+                                  <span class="text">Task 5</span>
+                              </div>
+                            </a>
+                             </li>
+           </ul> 
+        </div>
+        </li>
+        <li><a href="#"  class="a_parent">
+            <div class="wrap">
+                <span class="text">Laboratory2</span>
+            </div>
+        </a></li>
+        <li><a href="#" class="a_parent">
+            <div class="wrap">
+            <span class="text">Laboratory3</span>
+        </div>
+    </a></li>
+        <li><a href="#" class="a_parent">
+            <div class="wrap">
+                <span class="text">Laboratory4</span>
+            </div>
+        </a></li>
+        <li><a href="#" class="a_parent">
+            <div class="wrap">
+                <span class="text">Laboratory5</span>
+            </div>
+        </a></li>
+    </ul>
+</div>
+</div>
+
+<script>
+    function sortString(str){
+        var arr=str.split('');
+        var tmp;
+        for(var i=0;i<arr.length;i++){
+            for(var j=i+1;j<arr.length;j++){
+                if(arr[i]>arr[j]){
+                    tmp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=tmp;
+                }
+            }
+        }
+        return arr[j];
+    }
+
+    //Laboratory1 Task3
+    function findSimilarLetters(){
+        var str=document.getElementById("word").value;
+        let obj=new Set();
+        for(let i=0;i<str.length;i++){
+            if(obj.has(str[i])){
+                //return false;
+                word="it has similar letters";
+                document.getElementById("answer").innerHTML=word; 
+            }else if(!obj.has(str[i])){
+                obj.add(str[i]);
+                word="it hasn't similar letters";
+                document.getElementById("answer").innerHTML=word;
+            }
+        }
+        //return true;
+    }
+    //Laboratory1 Task3
+    function sortString(str){
+        var arr=str.split('');
+        var tmp;
+        for(var i=0;i<arr.length;i++){
+            for(var j=i+1;j<arr.length;j++){
+                if(arr[i]>arr[j]){
+                    tmp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=tmp;
+                }
+            }
+        }
+        return arr[j];
+    }
+    //Laboratory1 task4
+    function outLetters(){
+        num_array =new Array();
+        for(let num=20;i<50;i++){
+            if(num%20==0&&num%50!=0){
+                num_array.add(num);
+            }
+        }
+        for(let i=0;i<num_array.length;i++){
+            console.log(num_array[i]);
+        }
+    }
+</script>
+<h4>Print words that do not contain duplicate letters; letters are ordered alphabetically; with the maximum length in this line.</h4>
+<input type="text" id="word" placeholder="your word"/>
+<button id="submit_word" type="button" onclick="findSimilarLetters();">Submit Word</button>
+<label id="answer">Answer:</label>
+
+<script src="scripts.js"></script>
+</body>
+</head>
+</html>

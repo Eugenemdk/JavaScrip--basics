@@ -77,6 +77,71 @@
     </div>
 
     <script src="scripts.js"></script>
-    </body>
+
+        <h4>A line is given. If it starts with 'abc', then replace them with 'www', otherwise add 'zzz' to the end of the line</h4>
+        <input type="text" id="word" placeholder="your word"/>
+        <button id="submit_word" type="button" onclick="addSubstractChars();">Submit Word</button>
+        <label id="answer">Answer:</label>
+        <script>
+            function generateChar(length){
+                let result=' ';
+                const charactersLength=characters.length;
+                for(let i=0;i<length;i++){
+                    result+=characters.charAt(Math.floor(Math.random()*charactersLength))
+                }
+            }
+
+            function insertChar(){
+                word=null;
+                for(let i=0;i<word.length;i+=2){
+                    word.replaceAt(i,generateChar(1));
+                }
+            }
+
+            function sortString(str){
+                var arr=str.split('');
+                var tmp;
+                for(var i=0;i<arr.length;i++){
+                    for(var j=i+1;j<arr.length;j++){
+                        if(arr[i]>arr[j]){
+                            tmp=arr[i];
+                            arr[i]=arr[j];
+                            arr[j]=tmp;
+                        }
+                    }
+                }
+                return arr[j];
+            }
+
+            function findSimilarLetters(str){
+                for(let i=0;i<str.length;i++){
+                    for(let j=i+1;i<str.length;i++){
+                        if(str.charAt(i)==str.charAt(j)){
+                            console.log("Thats a string with similar letters")
+                        }
+                    }
+                }
+            }
+            function addSubstractChars(){
+                String.prototype.replaceAt=function(index,chr){
+                    var chars=this.split('');
+                    chars[index]=chr;
+                    return chars.join('');
+                }
+            var word=document.getElementById("word").value;
+            //document.getElementById("answer").innerHTML=word;
+            if(word.charAt(0)=="a"&word.charAt(1)=="b"&word.charAt(2)=="c"){
+               //word="www";
+               for(let i=0;i<3;i++){
+               word=word.replaceAt(i,"w");
+            }
+                document.getElementById("answer").innerHTML=word;
+        } else{
+                new_word=word+"zzz";
+                document.getElementById("answer").innerHTML=new_word;
+                }
+            }
+            </script>
+        </body>
     </head>
 </html>

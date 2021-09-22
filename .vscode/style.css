@@ -50,11 +50,15 @@ ul.navbar >li a{
 ul.navbar li:last-child >a{
     margin-right: 0;
 }
-.navbar ul li a:hover,
-.navbar ul li a.active,
-.navbar .dd_menu ul li a:hover,
-.navbar .dd_menu ul li.a.active  {
+ul.navbar li a:hover,
+ul.navbar li a.active,
+ul.navbar .dd_menu  li a:hover,
+ul.navbar .dd_menu  li.a.active  {
     background-color: #c279b7;
+}
+ul.navbar li a.a_parent.active + .dd_menu{
+    display: block;
+
 }
 .navbar .dd_menu{
     position:absolute;
@@ -78,5 +82,12 @@ transform: translateX(-50%);
 z-index:1;
 border: 15px solid;
 border-color:transparent transparent #9972bf transparent;
+}
 
+.first{
+    position: absolute;
+}
+.second{
+    position:relative;
+    top:20px;
 }

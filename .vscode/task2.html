@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lamg="en">
+    <head>
+        <body>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+        <title>Laboratory task of Eugene Medianyk number 17</title>
+<div class="wrapper">
+    <ul class="navbar">
+        <li><a href="#" class="a_parent">
+            <div class="wrap">
+                <span class="text">Laboratory1</span>
+            </div>
+        </a>
+       <div class="dd_menu">
+           <ul>
+               <li>
+              <a href="C:/Users/Eugene/Desktop/JavaScript-basics/.vscode/task1.html" class="dd_menu_a">
+                <div class="wrap" >
+                    <span class="text">Task 1</span>
+                </div>
+              </a>
+               </li>
+               <li>
+                <a href="C:/Users/Eugene/Desktop/JavaScript-basics/.vscode/task2.html" class="dd_menu_a">
+                  <div class="wrap">
+                      <span class="text">Task 2</span>
+                  </div>
+                </a>
+                 </li>
+                 <li>
+                    <a href="C:/Users/Eugene/Desktop/JavaScript-basics/.vscode/task3.html" class="dd_menu_a">
+                      <div class="wrap">
+                          <span class="text">Task 3</span>
+                      </div>
+                    </a>
+                     </li>
+                     <li>
+                        <a href="C:/Users/Eugene/Desktop/JavaScript-basics/.vscode/task4.html" class="dd_menu_a">
+                          <div class="wrap">
+                              <span class="text">Task 4</span>
+                          </div>
+                        </a>
+                         </li>
+                         <li>
+                            <a href="C:/Users/Eugene/Desktop/JavaScript-basics/.vscode/task5.html" class="dd_menu_a">
+                              <div class="wrap">
+                                  <span class="text">Task 5</span>
+                              </div>
+                            </a>
+                             </li>
+           </ul> 
+        </div>
+        </li>
+        <li><a href="#"  class="a_parent">
+            <div class="wrap">
+                <span class="text">Laboratory2</span>
+            </div>
+        </a></li>
+        <li><a href="#" class="a_parent">
+            <div class="wrap">
+            <span class="text">Laboratory3</span>
+        </div>
+    </a></li>
+        <li><a href="#" class="a_parent">
+            <div class="wrap">
+                <span class="text">Laboratory4</span>
+            </div>
+        </a></li>
+        <li><a href="#" class="a_parent">
+            <div class="wrap">
+                <span class="text">Laboratory5</span>
+            </div>
+        </a></li>
+    </ul>
+</div>
+</div>
+<script src="scripts.js"></script>
+
+<script>
+    function generateChar(length) {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+          result += characters.charAt(Math.floor(Math.random() * 
+     charactersLength));
+       }
+       document.getElementById("answer").innerHTML=result;
+    }  
+
+    function insertChar(){ 
+        String.prototype.replaceAt=function(index,chr){
+            var chars=this.split('');
+            chars[index]=chr;
+            return chars.join('');
+        }
+        
+        var word=document.getElementById("word").value;
+        var chrArr=word.split('').join(Math.random().toString(36).substring(2,3)+Math.random().toString(36).substring(2,3));
+       // var new_word="";
+        //for(let i=0;i<chrArr.length;i++){
+        //   chrArr[i].concat('',"ww");
+        //}
+        //new_word=word.split("").join(generateChar(2));
+        document.getElementById("answer").innerHTML=chrArr;
+    }
+</script>
+<h4>Given a string. Insert two random characters after each character.</h4>
+<input type="text" id="word" placeholder="your word"/>
+<button id="submit_word" type="button" onclick="insertChar();">Submit Word</button>
+<label id="answer">Answer:</label>
+
+</body>
+</head>
+</html>
